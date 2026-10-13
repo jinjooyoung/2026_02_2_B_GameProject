@@ -7,7 +7,7 @@ public class DungeonPlayerData
     public string name;
     public int level;
     public int hp;
-    public int maxhp;
+    public int maxHp;
     public int attack;
     public int gold;
 }
@@ -25,14 +25,25 @@ public class DungeonRoomData
 }
 
 [Serializable]
-public class DungeonStateData
+public class DungeonRunData
 {
-    public DungeonPlayerData player;
-    public DungeonRoomData room;
+    public string id;
+    public string state;
+    public int currentRoomIndex;
+    public int runGold;
+    public DungeonRoomData currentRoom;
+
 }
 
 [Serializable]
-public class DuneonResponse
+public class DungeonStateData
+{
+    public DungeonPlayerData player;
+    public DungeonRunData run;
+}
+
+[Serializable]
+public class DungeonResponse
 {
     public bool success;
     public string code;
